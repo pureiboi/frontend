@@ -1,0 +1,114 @@
+@width: 10px;
+@height: @width + 200px;
+
+body {
+  background: #0f9d58;
+}
+
+@ballSize: 20px;
+@containerSize: 500px;
+@halfContainerSize: @containerSize / 2;
+@n: 36;
+@pdeg: 360deg / @n;
+@animationDur: 2000ms;
+
+.loading {
+  width: @containerSize;
+  height: @containerSize;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 50%;
+  //outline: 1px solid #fff;
+
+  .dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: @ballSize;
+    height: @ballSize;
+    margin-left: -@ballSize / 2;
+    margin-top: -@ballSize / 2;
+    //background: red;
+    //display: inline-block;
+    perspective: 90px;
+    transform-style: preserve-3d;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    &::before {
+      background: black;
+      top: -100%;
+      animation: moveBlack @animationDur infinite linear;
+    }
+    &::after {
+      background: white;
+      top: 100%;
+      animation: moveWhite @animationDur infinite ease-in-out;
+    }
+
+  }
+}
+
+
+@keyframes moveBlack {
+  0% {
+    animation-timing-function: ease-in;
+  }
+  25% {
+    transform: translate3d(0, 100%, @ballSize);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate3d(0, 200%, 0);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform: translate3d(0, 100%, -@ballSize);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    animation-timing-function: ease-in;
+  }
+}
+
+
+@keyframes moveWhite {
+  0% {
+    animation-timing-function: ease-in;
+  }
+  25% {
+    transform: translate3d(0, -100%, -@ballSize);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate3d(0, -200%, 0);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform: translate3d(0, -100%, @ballSize);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    animation-timing-function: ease-in;
+  }
+}
+
+
+
+.loop(@i) when (@i <= @n) {
+  .dot:nth-child(@{i}) {
+    transform: rotate(calc(@pdeg * @i)) translateY(calc(-@containerSize / 2));
+    //background: black;
+    &::before, &::after {
+      animation-delay: calc(-@animationDur / @n * 6 * @i);
+    }
+  }
+
+  .loop(@i + 1);
+}
+
+.loop(1);

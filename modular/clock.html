@@ -1,0 +1,151 @@
+<html>
+
+<head>
+
+
+    <style>
+
+        body {
+            background: #0b8043;
+        }
+
+        .line {
+            position: absolute;
+            transform-origin: bottom left;
+            left: 50%;
+        }
+
+        .lineSecond {
+            width: 100px;
+            height: 100px;
+            border-left: 1px solid black;
+            top: 25px;
+            animation: rotateLine 1000ms infinite linear;
+        }
+
+        .lineMin {
+            width: 80px;
+            height: 80px;
+            border-left: 1px solid orange;
+            top: 45px;
+            animation: rotateLine 6000ms infinite linear;
+        }
+
+        .lineHour {
+            width: 60px;
+            height: 60px;
+            border-left: 1px solid silver;
+            top: 65px;
+            animation: rotateLine 36000ms infinite linear;
+        }
+
+        .clock {
+            font-size: 40px;
+            position: absolute;
+        }
+
+
+        .n1 {
+            right: 25%;
+            top: 10%;
+        }
+
+        .n2 {
+            right: 10%;
+            top: 20%
+        }
+
+        .n3 {
+            right: 0;
+            top: 40%;
+        }
+
+        .n4 {
+            right: 10%;
+            bottom: 20%;
+        }
+
+        .n5 {
+            bottom: 10%;
+            right: 25%;
+        }
+
+        .n6 {
+            bottom: 0px;
+            left: 45%;
+        }
+
+        .n7 {
+            left: 25%;
+            bottom: 10%;
+        }
+
+        .n8 {
+            left: 10%;
+            bottom: 20%;
+        }
+
+        .n9 {
+            left: 0;
+            top: 40%;
+        }
+
+        .n10 {
+            left: 6%;
+            top: 20%;
+        }
+
+        .n11 {
+            left: 22%;
+            top: 10%;
+        }
+
+        .n12 {
+            left: 43%;
+        }
+
+
+        .container {
+            width: 250px;
+            height: 250px;
+            /*border-radius: 50%;*/
+            margin: auto;
+            border: solid 1px white;
+            position: relative;
+        }
+
+        @keyframes rotateLine {
+            100% {
+                transform: rotate(360deg);
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="line lineSecond"></div>
+    <div class="line lineMin"></div>
+    <div class="line lineHour"></div>
+
+
+    <div class="clock n1">1</div>
+    <div class="clock n2">2</div>
+    <div class="clock n3">3</div>
+    <div class="clock n4">4</div>
+    <div class="clock n5">5</div>
+    <div class="clock n6">6</div>
+    <div class="clock n7">7</div>
+    <div class="clock n8">8</div>
+    <div class="clock n9">9</div>
+    <div class="clock n10">10</div>
+    <div class="clock n11">11</div>
+    <div class="clock n12">12</div>
+</div>
+
+</body>
+
+</html>

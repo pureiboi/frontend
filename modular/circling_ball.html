@@ -1,0 +1,58 @@
+<html lang="en">
+
+<style>
+
+    html {
+        background: #aaa;
+    }
+
+    .box {
+        width: 500px;
+        height: 500px;
+        /*background: #86cfda;*/
+        background: transparent;
+        border: 10px solid green;
+        border-radius: 50%;
+        position: relative;
+
+        animation: round 10s infinite linear;
+    }
+
+    .box:before{
+        position: absolute;
+        top: 45px;
+        left: 45px;
+        content: "";
+        width: 10%;
+        height: 10%;
+        background: green;
+        border-radius: 50%;
+    }
+
+    .center {
+        margin: auto;
+    }
+
+    @keyframes round {
+
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
+
+    }
+
+</style>
+
+
+<body>
+
+<div class="box center">
+
+</div>
+
+</body>
+</html>
