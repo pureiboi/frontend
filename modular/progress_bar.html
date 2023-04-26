@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+        html {
+            --animation-dur: 20s;
+        }
+        
+        @property --progress-value {
+            syntax: "<integer>";
+            initial-value: 0;
+            inherits: false;
+        }
+
+
+        body {
+            background: black;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background:
+                radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
+            animation: progress  var(--animation-dur, 10s) infinite forwards;
+        }
+
+        .progress-bar::before {
+            counter-reset: percentage var(--progress-value);
+            content: counter(percentage) '%';
+            animation: progress var(--animation-dur, 10s) infinite forwards;
+        }
+
+
+
+        @keyframes progress {
+            0% {
+                --progress-value: 0;
+            }
+
+            100% {
+                --progress-value: 100;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="progress-bar">
+        <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+    </div>
+
+
+</body>
+
+</html>
