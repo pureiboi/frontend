@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../style/main.css">
+
+    <style>
+
+        :root {
+            --size: 50px;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .rect {
+            position: relative;
+            border: 1px solid white;
+            width: 500px;
+            height: var(--size);
+            margin: auto auto 20px;
+            /*margin-left: 50%;*/
+            /*margin-bottom: 20px*/
+
+        }
+
+        .ball {
+            position: absolute;
+            left: 0;
+            width: var(--size);
+            height: var(--size);
+            background: orange;
+        }
+
+        span {
+            position: absolute;
+        }
+
+        @keyframes move {
+            50% {
+                left: calc(100% - var(--size))
+            }
+        }
+
+        .animate1 {
+            animation: move 5s infinite linear;
+        }
+
+        .animate2 {
+            animation: move 5s infinite ease;
+        }
+
+
+        .animate3 {
+            animation: move 5s infinite ease-in;
+        }
+
+        .animate4 {
+            animation: move 5s infinite ease-out;
+        }
+
+        .animate5 {
+            animation: move 5s infinite ease-in-out;
+        }
+
+        .animate6 {
+            animation: move 5s infinite step-start;
+        }
+
+        .animate7 {
+            animation: move 5s infinite step-end;
+        }
+
+        .animate8 {
+            animation: move 5s infinite cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        }
+
+        .animate9 {
+            animation: move 5s infinite both;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="rect">
+    <span>linear</span>
+    <div class="ball circle animate1"></div>
+</div>
+
+<div class="rect">
+    <span>ease</span>
+    <div class="ball circle animate2"></div>
+</div>
+
+
+<div class="rect">
+    <span>ease-in</span>
+    <div class="ball circle animate3"></div>
+</div>
+
+
+<div class="rect">
+    <span>ease-out</span>
+    <div class="ball circle animate4"></div>
+</div>
+
+<div class="rect">
+    <span>ease-in-out</span>
+    <div class="ball circle animate5"></div>
+</div>
+
+
+<div class="rect">
+    <span>step-start</span>
+    <div class="ball circle animate6"></div>
+</div>
+
+<div class="rect">
+    <span>step-end</span>
+    <div class="ball circle animate7"></div>
+</div>
+
+
+<div class="rect">
+    <span>cubic-bezier</span>
+    <div class="ball circle animate8"></div>
+</div>
+
+
+<div class="rect">
+    <span>none</span>
+    <div class="ball circle animate9"></div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <link href="../style/main.css" >
+
+<style>
+
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .triangle {
+        /*display: block;*/
+        width: 0px;
+        height: 0px;
+        margin: auto;
+        /*margin-left: 50%;*/
+        /*margin-top: 50%;*/
+        background: transparent;
+        border-style: solid;
+        border-width: 200px;
+        border-color: transparent;
+        animation: animate 5s infinite step-start;
+    }
+
+    .top {
+        border-top-color: pink;
+    }
+
+    .left {
+        border-left-color: yellow;
+    }
+    .right {
+        border-right-color: orange;
+    }
+    .bottom {
+        border-bottom-color: cadetblue;
+    }
+    
+    @keyframes animate {
+        25% {
+            border-color: transparent;
+            border-top-color: pink;
+        }
+
+        50% {
+            border-color: transparent;
+            border-left-color: yellow;
+        }
+        75% {
+            border-color: transparent;
+            border-right-color: orange;
+        }
+        100% {
+            border-color: transparent;
+            border-bottom-color: cadetblue;
+        }
+    }
+
+
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="triangle"></div>
+<!--    <div class="triangle top"></div>-->
+<!--    <div class="triangle left"></div>-->
+<!--    <div class="triangle bottom"></div>-->
+<!--    <div class="triangle right"></div>-->
+
+</div>
+
+</body>
+</html>
