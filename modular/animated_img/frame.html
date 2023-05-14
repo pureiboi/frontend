@@ -1,0 +1,50 @@
+<html>
+
+
+<head>
+
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+
+    <script>
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+    </script>
+
+
+</head>
+<body>
+
+<div id="wrapper">
+
+</div>
+
+</body>
+
+
+<script>
+
+    let numOfImg = 10;
+    const wrapper = document.getElementById("wrapper");
+
+    console.log(wrapper)
+    for (let i = 0; i < numOfImg; i++) {
+        let ele = document.createElement("div")
+        ele.className = "img";
+        wrapper.appendChild(ele);
+
+    }
+
+    console.log("ended script")
+</script>
+
+</html>

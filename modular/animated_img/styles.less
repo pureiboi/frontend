@@ -1,0 +1,32 @@
+@n: 10;
+@height: 20rem;
+
+#wrapper {
+  display: flex;
+  gap: 0.5rem;
+  height: @height;
+  margin-top: 20%;
+}
+
+.img:hover{
+  flex: 5;
+}
+
+.img {
+  flex: 1;
+  border-radius: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.loop(@i) when (@i <= @n) {
+  .img:nth-child(@{i}) {
+    background-image: url("../../resources/img_@{i}.jpg");
+  }
+
+  .loop(@i + 1);
+}
+
+.loop(1);
